@@ -1,0 +1,41 @@
+{
+	"fileName": "id_1599205179612_132_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "Leave_Time.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "text",
+		"newValue": "Record Time"
+	},
+	"selector": {
+		"id": "Leave_Time::sap.suite.ui.generic.template.ObjectPage.view.Details::ZACT_EMP_CV--to_tlogtp::com.sap.vocabularies.UI.v1.LineItem::addEntry",
+		"type": "sap.m.Button",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/Leave_Time/changes/",
+	"projectId": "Leave_Time",
+	"creation": "2020-09-04T07:40:13.363Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.81.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "${project.version}",
+		"from": "${project.version}",
+		"to": "${project.version}"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

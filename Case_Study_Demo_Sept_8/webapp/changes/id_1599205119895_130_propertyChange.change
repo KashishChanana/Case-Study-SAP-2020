@@ -1,0 +1,41 @@
+{
+	"fileName": "id_1599205119895_130_propertyChange",
+	"fileType": "change",
+	"changeType": "propertyChange",
+	"moduleName": "",
+	"reference": "Leave_Time.Component",
+	"packageName": "$TMP",
+	"content": {
+		"property": "label",
+		"newValue": "Personal Details"
+	},
+	"selector": {
+		"id": "Leave_Time::sap.suite.ui.generic.template.ObjectPage.view.Details::ZACT_EMP_CV--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+		"type": "sap.ui.comp.smartform.Group",
+		"idIsLocal": false
+	},
+	"layer": "VENDOR",
+	"texts": {},
+	"namespace": "apps/Leave_Time/changes/",
+	"projectId": "Leave_Time",
+	"creation": "2020-09-04T07:39:16.112Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.81.0",
+		"sourceChangeFileName": "",
+		"compositeCommand": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"validAppVersions": {
+		"creation": "${project.version}",
+		"from": "${project.version}",
+		"to": "${project.version}"
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}
