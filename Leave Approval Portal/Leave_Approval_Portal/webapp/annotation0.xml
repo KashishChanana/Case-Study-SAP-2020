@@ -1,0 +1,167 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZCASE_LAP_EMP_CV_CDS/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZCASE_LAP_EMP_CV_CDS"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Leave_Approval_Portal.annotation0.ZCASE_LAP_EMP_CV_CDS">
+			<Annotations Target="Metadata.ZCASE_LAP_LEAVE_CVType">
+				<Annotation Term="UI.Identification" Qualifier="HeaderInfo">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/emp_id"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;EMPLOYEE_ID}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_id"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_ID}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.HeaderInfo">
+					<Record Type="UI.HeaderInfoType">
+						<PropertyValue Property="TypeName" String="{@i18n&gt;DETAIL}"/>
+						<PropertyValue Property="TypeNamePlural" String="{@i18n&gt;LEAVE_DETAILS}"/>
+						<PropertyValue Property="Title" Path="@UI.Identification#HeaderInfo"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="EmpContact">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/p_type"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PHONE_TYPE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/p_number"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;PHONE_NUMBER}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Facets">
+					<Collection>
+						<Record Type="UI.CollectionFacet">
+							<PropertyValue Property="Facets">
+								<Collection>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification#EmpFacet"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;PERSONAL_DETAILS}"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification#EmpAddress"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;ADDRESS_DETAILS}"/>
+									</Record>
+									<Record Type="UI.ReferenceFacet">
+										<PropertyValue Property="Target" AnnotationPath="@UI.Identification#EmpContact"/>
+										<PropertyValue Property="Label" String="{@i18n&gt;CONTACT_DETAILS}"/>
+									</Record>
+								</Collection>
+							</PropertyValue>
+							<PropertyValue Property="Label" String="{@i18n&gt;EMPLOYEE_INFORMATION}"/>
+							<PropertyValue Property="ID" String="GeneralInformation"/>
+						</Record>
+						<Record Type="UI.ReferenceFacet">
+							<PropertyValue Property="Target" AnnotationPath="@UI.Identification#LeaveDetails"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_REQUEST_INFORMATION}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="LeaveDetails">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_id"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_ID}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_type"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_TYPE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_approved"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_STATUS}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_start_date"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_START_DATE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_end_date"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;LEAVE_END_DATE}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="leave_days_num"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;NUMBER_OF_DAYS}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="EmpAddress">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/street"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;ADDRESS}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/nr"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;NEAR}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/city"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;CITY}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/zip"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;ZIP}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.Identification" Qualifier="EmpFacet">
+					<Collection>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/emp_id"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;EMPLOYEE_ID}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/name"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;NAME}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/gender"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;GENDER}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/team"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;TEAM}"/>
+						</Record>
+						<Record Type="UI.DataField">
+							<PropertyValue Property="Value" Path="to_empcv/region"/>
+							<PropertyValue Property="Label" String="{@i18n&gt;REGION}"/>
+						</Record>
+					</Collection>
+				</Annotation>
+				<Annotation Term="UI.PresentationVariant">
+					<Record Type="UI.PresentationVariantType">
+						<PropertyValue Property="GroupBy">
+							<Collection>
+								<PropertyPath>leave_approved</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="SortOrder">
+							<Collection>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="leave_start_date"/>
+								</Record>
+								<Record Type="Common.SortOrderType">
+									<PropertyValue Property="Property" PropertyPath="emp_id"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

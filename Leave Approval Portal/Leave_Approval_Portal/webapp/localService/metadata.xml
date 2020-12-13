@@ -1,0 +1,86 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/></edmx:Reference>
+	<edmx:Reference xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"
+		Uri="./iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value"><edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZCASE_LAP_EMP_CV_CDS" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZCASE_LAP_EMP_CVType" sap:label="Leave Application Portal Emp CV" sap:content-version="1">
+				<Key><PropertyRef Name="emp_id"/></Key><Property Name="emp_id" Type="Edm.String" Nullable="false" MaxLength="15" sap:display-format="UpperCase" sap:label="Data element for Emp ID"
+					sap:heading=""/><Property Name="name" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="zname" sap:quickinfo="name of the employee"/><Property Name="gender" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="data elem for gender field casestudy"
+					sap:heading=""/><Property Name="team" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="generic text case study data elem"
+					sap:heading=""/><Property Name="region" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="generic text case study data elem"
+					sap:heading=""/><Property Name="manager_id" Type="Edm.String" MaxLength="15" sap:display-format="UpperCase" sap:label="Data element for Emp ID"
+					sap:heading=""/><Property Name="p_type" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Phone Type Data Element" sap:heading=""/><Property Name="p_number" Type="Edm.String" MaxLength="14" sap:display-format="NonNegative" sap:label="Phone Number"/><Property Name="street" Type="Edm.String" MaxLength="30" sap:label="Street"/><Property Name="nr" Type="Edm.Decimal" Precision="6" Scale="0" sap:label="House number" sap:quickinfo="Number"/><Property Name="zip" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Postal Code"/><Property Name="city" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="City"/><NavigationProperty Name="to_leavetp" Relationship="ZCASE_LAP_EMP_CV_CDS.assoc_0DCFF103D15BA3B467EBE47395726F50"
+					FromRole="FromRole_assoc_0DCFF103D15BA3B467EBE47395726F50" ToRole="ToRole_assoc_0DCFF103D15BA3B467EBE47395726F50"/></EntityType>
+			<EntityType Name="ZCASE_LAP_LEAVE_CVType" sap:label="Leave Application Portal Leave CV" sap:content-version="1">
+				<Key><PropertyRef Name="leave_id"/><PropertyRef Name="emp_id"/></Key><Property Name="leave_id" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:label="LeaveId"
+					sap:quickinfo="leave id data elem casestudy"/><Property Name="emp_id" Type="Edm.String" Nullable="false" MaxLength="15" sap:display-format="UpperCase" sap:label="EmpId"
+					sap:quickinfo="Data element for Emp ID"/><Property Name="leave_start_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="LeaveStartDate"
+					sap:quickinfo="date data element casestudy"/><Property Name="leave_end_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="LeaveEndDate"
+					sap:quickinfo="date data element casestudy"/><Property Name="leave_days_num" Type="Edm.Byte" sap:label="Number_of_Days"/><Property Name="leave_type" Type="Edm.String" MaxLength="40" sap:display-format="UpperCase" sap:label="LeaveType"
+					sap:quickinfo="generic text case study data elem"/><Property Name="leave_approved" Type="Edm.Byte" sap:label="Leave_Status" sap:quickinfo="Boolean data element casestudy"/><NavigationProperty Name="to_empcv" Relationship="ZCASE_LAP_EMP_CV_CDS.assoc_0DCFF103D15BA3B467EBE47395726F50"
+					FromRole="ToRole_assoc_0DCFF103D15BA3B467EBE47395726F50" ToRole="FromRole_assoc_0DCFF103D15BA3B467EBE47395726F50"/></EntityType>
+			<Association Name="assoc_0DCFF103D15BA3B467EBE47395726F50" sap:content-version="1">
+				<End Type="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_EMP_CVType" Multiplicity="1" Role="FromRole_assoc_0DCFF103D15BA3B467EBE47395726F50"><OnDelete Action="Cascade"/></End><End Type="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_LEAVE_CVType" Multiplicity="*" Role="ToRole_assoc_0DCFF103D15BA3B467EBE47395726F50"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_assoc_0DCFF103D15BA3B467EBE47395726F50"><PropertyRef Name="emp_id"/></Principal>
+					<Dependent Role="ToRole_assoc_0DCFF103D15BA3B467EBE47395726F50"><PropertyRef Name="emp_id"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZCASE_LAP_EMP_CV_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true"
+				sap:supported-formats="atom json xlsx"><EntitySet Name="ZCASE_LAP_EMP_CV" EntityType="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_EMP_CVType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:content-version="1"/><EntitySet Name="ZCASE_LAP_LEAVE_CV" EntityType="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_LEAVE_CVType" sap:creatable="false" sap:deletable="false"
+				sap:searchable="true" sap:content-version="1"/>
+				<AssociationSet Name="assoc_0DCFF103D15BA3B467EBE47395726F50" Association="ZCASE_LAP_EMP_CV_CDS.assoc_0DCFF103D15BA3B467EBE47395726F50"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"><End EntitySet="ZCASE_LAP_EMP_CV" Role="FromRole_assoc_0DCFF103D15BA3B467EBE47395726F50"/><End EntitySet="ZCASE_LAP_LEAVE_CV" Role="ToRole_assoc_0DCFF103D15BA3B467EBE47395726F50"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_EMP_CV_CDS_Entities"><Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+				<Annotation Term="Aggregation.ApplySupported">
+					<Record>
+						<PropertyValue Property="Transformations">
+							<Collection>
+								<String>aggregate</String>
+								<String>groupby</String>
+								<String>filter</String>
+							</Collection>
+						</PropertyValue><PropertyValue Property="Rollup" EnumMember="None"/></Record>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_EMP_CVType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>emp_id</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_LEAVE_CVType">
+				<Annotation Term="Common.SemanticKey">
+					<Collection>
+						<PropertyPath>emp_id</PropertyPath>
+						<PropertyPath>leave_id</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZCASE_LAP_EMP_CV_CDS.ZCASE_LAP_EMP_CV_CDS_Entities">
+				<Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+					<Record Type="Org.OData.Capabilities.V1.BatchSupportType"><PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/></Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZCASE_LAP_EMP_CV_CDS/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZCASE_LAP_EMP_CV_CDS/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
